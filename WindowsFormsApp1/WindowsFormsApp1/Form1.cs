@@ -156,6 +156,7 @@ namespace WindowsFormsApp1
             label1.Text = "0";
             Zahl1 = 0;
             Zahl2 = 0;
+            erstezahl = false;
 
         }
 
