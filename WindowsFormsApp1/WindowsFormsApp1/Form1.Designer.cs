@@ -196,6 +196,7 @@
             this.devide.TabIndex = 13;
             this.devide.Text = "/";
             this.devide.UseVisualStyleBackColor = true;
+            this.devide.Click += new System.EventHandler(this.devide_Click);
             // 
             // label1
             // 

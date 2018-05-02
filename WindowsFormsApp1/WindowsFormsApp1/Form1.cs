@@ -119,11 +119,26 @@ namespace WindowsFormsApp1
 
         private void enter_Click(object sender, EventArgs e)
         {
-            if (Zahl2 != 0)
+            
+            //ergebnis.Text = Convert.ToString(das);
+            //label1.Text = Convert.ToString(das);
+            if (erstezahl)
                 Zahl2 = Convert.ToInt32(combindedString);
             if (Operator == '+')
             {
                 Enter = Zahl1 + Zahl2;
+            }
+            if (Operator == '-')
+            {
+                Enter = Zahl1 - Zahl2;
+            }
+            if (Operator == '*')
+            {
+                Enter = Zahl1 * Zahl2;
+            }
+            if (Operator == '/')
+            {
+                Enter = Zahl1 / Zahl2;
             }
             ergebnis.Text = Convert.ToString(Enter);
             label1.Text = Convert.ToString(Enter);
@@ -146,7 +161,22 @@ namespace WindowsFormsApp1
 
         private void multi_Click(object sender, EventArgs e)
         {
+            if (erstezahl)
+            {
+                das = equal();
+            }
 
+            else
+            {
+                Zahl1 = Convert.ToInt32(combindedString);
+            }
+
+            Operator = '*';
+            label1.Text = Convert.ToString(Zahl1) + "*" + Convert.ToString(Zahl2);
+            iList.Clear();
+            lablelist.Add("*");
+            printlable();
+            erstezahl = true;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -157,18 +187,15 @@ namespace WindowsFormsApp1
             {
                 
                 das = equal();
-                //Zahl1 = Convert.ToInt32(combindedString) + das;
-                //Convert.ToInt32(label1.Text);
+         
             }
 
             else
             {
-               // equal();
+              
                 Zahl1 = Convert.ToInt32(combindedString);
             }
-            // Zahl1 = Convert.ToInt32(combindedString) + Convert.ToInt32(label1.Text);
-
-
+          
             Operator = '+';
             label1.Text = Convert.ToString(Zahl1) + "+" + Convert.ToString(Zahl2);
             iList.Clear();
@@ -190,6 +217,16 @@ namespace WindowsFormsApp1
             if (Operator == '-')
             {
                 Enter = Zahl1 - Zahl2;
+                Zahl1 = Enter;
+            }
+            if (Operator == '*')
+            {
+                Enter = Zahl1 * Zahl2;
+                Zahl1 = Enter;
+            }
+            if (Operator == '/')
+            {
+                Enter = Zahl1 / Zahl2;
                 Zahl1 = Enter;
             }
             iList.Clear();
@@ -215,6 +252,26 @@ namespace WindowsFormsApp1
             label1.Text = Convert.ToString(Zahl1) + "-" + Convert.ToString(Zahl2);
             iList.Clear();
             lablelist.Add("-");
+            printlable();
+            erstezahl = true;
+        }
+
+        private void devide_Click(object sender, EventArgs e)
+        {
+            if (erstezahl)
+            {
+                das = equal();
+            }
+
+            else
+            {
+                Zahl1 = Convert.ToInt32(combindedString);
+            }
+
+            Operator = '/';
+            label1.Text = Convert.ToString(Zahl1) + "/" + Convert.ToString(Zahl2);
+            iList.Clear();
+            lablelist.Add("/");
             printlable();
             erstezahl = true;
         }
