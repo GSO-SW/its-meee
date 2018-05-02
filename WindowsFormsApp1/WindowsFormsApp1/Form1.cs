@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 	public partial class Form1 : Form
 	{
         String rechnen;
+        List<int> iList = new List<int>();
         int[] test;
         int i = 0;
         public Form1()
@@ -24,17 +25,17 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ergebnis.Text = "1";
-            test[i] = 1;
-            i++;
             
+            iList.Add(1);
+            ergebnis.Text = Convert.ToString(iList[0], iList[1]);
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ergebnis.Text = "2";
-            test[i] = 2;
-            i++;
+            iList.Add(2);
         }
     }
 }
