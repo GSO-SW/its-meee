@@ -13,11 +13,13 @@ namespace WindowsFormsApp1
 	public partial class Form1 : Form
 	{
         String rechnen;
+        bool erstezahl = false;
         List<int> iList = new List<int>();
         List<string> lablelist = new List<string>();
+        int das;
         int[] test;
         int Zahl1;
-        int Zahl2;
+        int Zahl2=0;
         int i = 0;
         int Enter;
         char Operator;
@@ -47,16 +49,7 @@ namespace WindowsFormsApp1
             print();
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            equal();
-            Zahl1 = Convert.ToInt32(combindedString) + Zahl2;
-            // Zahl1 = Convert.ToInt32(combindedString) + Convert.ToInt32(label1.Text);
-            Operator = '+';
-            iList.Clear();
-            lablelist.Add("+");
-            printlable();
-        }
+       
        
         private void button3_Click(object sender, EventArgs e)
         {
@@ -110,7 +103,7 @@ namespace WindowsFormsApp1
         private void button14_Click(object sender, EventArgs e)
         {
             iList.Add(0);
-            lablelist.Add("10");
+            lablelist.Add("0");
             print();
         }
         private void print()
@@ -126,35 +119,104 @@ namespace WindowsFormsApp1
 
         private void enter_Click(object sender, EventArgs e)
         {
-            Zahl2 = Convert.ToInt32(combindedString);
+            if (Zahl2 != 0)
+                Zahl2 = Convert.ToInt32(combindedString);
             if (Operator == '+')
             {
                 Enter = Zahl1 + Zahl2;
             }
             ergebnis.Text = Convert.ToString(Enter);
             label1.Text = Convert.ToString(Enter);
+            iList.Clear();
+
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
             iList.Clear();
             combindedString = "";
+            combinedlable = "";
             ergebnis.Text = "";
+            lablelist.Clear();
+            label1.Text = "0";
+            Zahl1 = 0;
+            Zahl2 = 0;
+
         }
 
         private void multi_Click(object sender, EventArgs e)
         {
 
         }
-        private void equal()
+
+        private void button10_Click(object sender, EventArgs e)
         {
-            Zahl2 = Convert.ToInt32(combindedString);
-            if (Operator == '+')
+            
+          
+            if (erstezahl)
+            {
+                
+                das = equal();
+                //Zahl1 = Convert.ToInt32(combindedString) + das;
+                //Convert.ToInt32(label1.Text);
+            }
+
+            else
+            {
+               // equal();
+                Zahl1 = Convert.ToInt32(combindedString);
+            }
+            // Zahl1 = Convert.ToInt32(combindedString) + Convert.ToInt32(label1.Text);
+
+
+            Operator = '+';
+            label1.Text = Convert.ToString(Zahl1) + "+" + Convert.ToString(Zahl2);
+            iList.Clear();
+            lablelist.Add("+");
+            printlable();
+            erstezahl = true;
+        }
+        private int equal()
+        {
+            if (erstezahl)
+            {
+                Zahl2 = Convert.ToInt32(combindedString);
+            }
+                if (Operator == '+')
             {
                 Enter = Zahl1 + Zahl2;
+                Zahl1 = Enter;
             }
+            if (Operator == '-')
+            {
+                Enter = Zahl1 - Zahl2;
+                Zahl1 = Enter;
+            }
+            iList.Clear();
             ergebnis.Text = Convert.ToString(Enter);
             label1.Text = Convert.ToString(Enter);
+            return Enter;
+        }
+
+        private void sub_Click(object sender, EventArgs e)
+        {
+
+            if (erstezahl)
+            {
+                das = equal();
+            }
+
+            else
+            {
+                Zahl1 = Convert.ToInt32(combindedString);
+            }
+   
+            Operator = '-';
+            label1.Text = Convert.ToString(Zahl1) + "-" + Convert.ToString(Zahl2);
+            iList.Clear();
+            lablelist.Add("-");
+            printlable();
+            erstezahl = true;
         }
     }
 }

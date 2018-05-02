@@ -176,6 +176,7 @@
             this.sub.TabIndex = 11;
             this.sub.Text = "-";
             this.sub.UseVisualStyleBackColor = true;
+            this.sub.Click += new System.EventHandler(this.sub_Click);
             // 
             // multi
             // 
