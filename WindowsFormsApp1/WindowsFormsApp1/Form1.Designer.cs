@@ -47,6 +47,7 @@
             this.enter = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.ButtonClose = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -212,9 +213,9 @@
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(94, 257);
+            this.button14.Location = new System.Drawing.Point(143, 257);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.Size = new System.Drawing.Size(49, 23);
             this.button14.TabIndex = 15;
             this.button14.Text = "0";
             this.button14.UseVisualStyleBackColor = false;
@@ -256,12 +257,24 @@
             this.ButtonClose.UseVisualStyleBackColor = false;
             this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(82, 257);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(48, 23);
+            this.button11.TabIndex = 31;
+            this.button11.Text = ".";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(284, 301);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.enter);
@@ -311,6 +324,7 @@
         private System.Windows.Forms.Button enter;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button ButtonClose;
+        private System.Windows.Forms.Button button11;
     }
 }
 

@@ -26,15 +26,16 @@ namespace WindowsFormsApp1
       );
 
         String rechnen;
+        bool point = false;
         bool erstezahl = false;
-        List<int> iList = new List<int>();
+        List<double> iList = new List<double>();
         List<string> lablelist = new List<string>();
-        int das;
+        double das;
         int[] test;
-        int Zahl1;
-        int Zahl2=0;
+        double Zahl1;
+        double Zahl2=0;
         
-        int Enter;
+        double Enter;
         char Operator;
         string combindedString;
         string combinedlable;
@@ -48,8 +49,15 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            iList.Add(1);
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .1);
+                point = false;
+               }
+            else
+            {  iList.Add(1); }
             lablelist.Add("1");
             print();
 
@@ -57,7 +65,13 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .2);
+                point = false;
+            }else
             iList.Add(2);
             lablelist.Add("2");
             print();
@@ -67,6 +81,13 @@ namespace WindowsFormsApp1
        
         private void button3_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .3);
+                point = false;
+            }else
             iList.Add(3);
             lablelist.Add("3");
             print();
@@ -74,6 +95,13 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .4);
+                point = false;
+            }else
             iList.Add(4);
             lablelist.Add("4");
             print();
@@ -81,6 +109,13 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .5);
+                point = false;
+            }else
             iList.Add(5);
             lablelist.Add("5");
             print();
@@ -88,6 +123,13 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .6);
+                point = false;
+            }else
             iList.Add(6);
             lablelist.Add("6");
             print();
@@ -95,6 +137,13 @@ namespace WindowsFormsApp1
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .7);
+                point = false;
+            }else
             iList.Add(7);
             lablelist.Add("7");
             print();
@@ -102,6 +151,13 @@ namespace WindowsFormsApp1
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .8);
+                point = false;
+            }else
             iList.Add(8);
             lablelist.Add("8");
             print();
@@ -109,6 +165,13 @@ namespace WindowsFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .9);
+                point = false;
+            }else
             iList.Add(9);
             lablelist.Add("9");
             print();
@@ -116,6 +179,13 @@ namespace WindowsFormsApp1
 
         private void button14_Click(object sender, EventArgs e)
         {
+            if (point)
+            {
+                double test = Convert.ToDouble(combindedString);
+                iList.Clear();
+                iList.Add(test + .0);
+                point = false;
+            }else
             iList.Add(0);
             lablelist.Add("0");
             print();
@@ -137,7 +207,7 @@ namespace WindowsFormsApp1
             //ergebnis.Text = Convert.ToString(das);
             //label1.Text = Convert.ToString(das);
             if (erstezahl)
-                Zahl2 = Convert.ToInt32(combindedString);
+                Zahl2 = Convert.ToDouble(combindedString);
             if (Operator == '+')
             {
                 Enter = Zahl1 + Zahl2;
@@ -171,6 +241,7 @@ namespace WindowsFormsApp1
             Zahl1 = 0;
             Zahl2 = 0;
             erstezahl = false;
+            point = false;
 
         }
 
@@ -183,7 +254,7 @@ namespace WindowsFormsApp1
 
             else
             {
-                Zahl1 = Convert.ToInt32(combindedString);
+                Zahl1 = Convert.ToDouble(combindedString);
             }
 
             Operator = '*';
@@ -208,7 +279,7 @@ namespace WindowsFormsApp1
             else
             {
               
-                Zahl1 = Convert.ToInt32(combindedString);
+                Zahl1 = Convert.ToDouble(combindedString);
             }
           
             Operator = '+';
@@ -218,11 +289,11 @@ namespace WindowsFormsApp1
             printlable();
             erstezahl = true;
         }
-        private int equal()
+        private double equal()
         {
             if (erstezahl)
             {
-                Zahl2 = Convert.ToInt32(combindedString);
+                Zahl2 = Convert.ToDouble(combindedString);
             }
                 if (Operator == '+')
             {
@@ -260,7 +331,7 @@ namespace WindowsFormsApp1
 
             else
             {
-                Zahl1 = Convert.ToInt32(combindedString);
+                Zahl1 = Convert.ToDouble(combindedString);
             }
    
             Operator = '-';
@@ -280,7 +351,7 @@ namespace WindowsFormsApp1
 
             else
             {
-                Zahl1 = Convert.ToInt32(combindedString);
+                Zahl1 = Convert.ToDouble(combindedString);
             }
 
             Operator = '/';
@@ -299,6 +370,17 @@ namespace WindowsFormsApp1
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            
+            point = true;
+            double test = Convert.ToDouble(combindedString);
+           
+            lablelist.Add(",");
+            print();
+            ergebnis.Text = Convert.ToString(test) + ",";
         }
     }
 }
