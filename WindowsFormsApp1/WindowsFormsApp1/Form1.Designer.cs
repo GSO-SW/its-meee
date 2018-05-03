@@ -46,6 +46,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.enter = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.ButtonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -83,13 +84,13 @@
             // 
             // ergebnis
             // 
-            this.ergebnis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ergebnis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ergebnis.BackColor = System.Drawing.Color.MistyRose;
+            this.ergebnis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ergebnis.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ergebnis.Location = new System.Drawing.Point(41, 55);
             this.ergebnis.Name = "ergebnis";
             this.ergebnis.ReadOnly = true;
-            this.ergebnis.Size = new System.Drawing.Size(179, 38);
+            this.ergebnis.Size = new System.Drawing.Size(179, 31);
             this.ergebnis.TabIndex = 3;
             // 
             // button4
@@ -239,12 +240,29 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
+            // ButtonClose
+            // 
+            this.ButtonClose.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonClose.FlatAppearance.BorderSize = 0;
+            this.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonClose.Image = global::WindowsFormsApp1.Properties.Resources.if_exit_3226;
+            this.ButtonClose.Location = new System.Drawing.Point(238, 9);
+            this.ButtonClose.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.Size = new System.Drawing.Size(37, 37);
+            this.ButtonClose.TabIndex = 30;
+            this.ButtonClose.Text = " ";
+            this.ButtonClose.UseVisualStyleBackColor = false;
+            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(284, 301);
+            this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.enter);
             this.Controls.Add(this.button14);
@@ -264,7 +282,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,6 +310,7 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button enter;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button ButtonClose;
     }
 }
 

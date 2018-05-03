@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,18 @@ namespace WindowsFormsApp1
 {
 	public partial class Form1 : Form
 	{
+        int i = 0;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+      (
+          int nLeftRect,
+          int nTopRect,
+          int nRightRect,
+          int nBottomRect,
+          int nWidthEllipse,
+          int nHeightEllipse
+      );
+
         String rechnen;
         bool erstezahl = false;
         List<int> iList = new List<int>();
@@ -20,7 +33,7 @@ namespace WindowsFormsApp1
         int[] test;
         int Zahl1;
         int Zahl2=0;
-        int i = 0;
+        
         int Enter;
         char Operator;
         string combindedString;
@@ -28,9 +41,10 @@ namespace WindowsFormsApp1
         public Form1()
 		{
 			InitializeComponent();
-            
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-		}
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -275,6 +289,16 @@ namespace WindowsFormsApp1
             lablelist.Add("/");
             printlable();
             erstezahl = true;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
