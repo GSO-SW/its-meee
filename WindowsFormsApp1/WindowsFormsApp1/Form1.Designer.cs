@@ -48,6 +48,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.ButtonClose = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.remove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -268,12 +269,23 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // remove
+            // 
+            this.remove.Location = new System.Drawing.Point(226, 63);
+            this.remove.Name = "remove";
+            this.remove.Size = new System.Drawing.Size(49, 23);
+            this.remove.TabIndex = 32;
+            this.remove.Text = "<--";
+            this.remove.UseVisualStyleBackColor = true;
+            this.remove.Click += new System.EventHandler(this.remove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(284, 301);
+            this.Controls.Add(this.remove);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.ButtonClose);
             this.Controls.Add(this.button10);
@@ -325,6 +337,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button ButtonClose;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button remove;
     }
 }
 

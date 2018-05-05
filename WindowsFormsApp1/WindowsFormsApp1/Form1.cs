@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
       );
 
         String rechnen;
+        bool nodelet = false;
         bool point = false;
         bool erstezahl = false;
         List<double> iList = new List<double>();
@@ -46,9 +47,11 @@ namespace WindowsFormsApp1
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
         }
-
+        private void nodelete()
+        { nodelet = false; }
         private void button1_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -65,6 +68,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -81,6 +85,7 @@ namespace WindowsFormsApp1
        
         private void button3_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -95,6 +100,7 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -109,6 +115,7 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -123,6 +130,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -137,6 +145,7 @@ namespace WindowsFormsApp1
 
         private void button9_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -151,6 +160,7 @@ namespace WindowsFormsApp1
 
         private void button8_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -165,6 +175,7 @@ namespace WindowsFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -179,6 +190,7 @@ namespace WindowsFormsApp1
 
         private void button14_Click(object sender, EventArgs e)
         {
+            nodelete();
             if (point)
             {
                 double test = Convert.ToDouble(combindedString);
@@ -203,9 +215,10 @@ namespace WindowsFormsApp1
 
         private void enter_Click(object sender, EventArgs e)
         {
-            
+
             //ergebnis.Text = Convert.ToString(das);
             //label1.Text = Convert.ToString(das);
+            nodelet = true;
             if (erstezahl)
                 Zahl2 = Convert.ToDouble(combindedString);
             if (Operator == '+')
@@ -381,6 +394,28 @@ namespace WindowsFormsApp1
             lablelist.Add(",");
             print();
             ergebnis.Text = Convert.ToString(test) + ",";
+        }
+
+        private void remove_Click(object sender, EventArgs e)
+        {
+            if (!nodelet)
+            {
+                iList.Clear();
+                String test = string.Join("", lablelist);
+                lablelist.Clear();
+                if (test.Length - 1 != Operator)
+                {
+                    test = test.Remove(test.Length - 1);
+                    lablelist.Add(test);
+                }
+                //label1.Text = test;
+                ergebnis.Text = ergebnis.Text.Remove(ergebnis.Text.Length - 1);
+                if (ergebnis.Text != "")
+                {
+                    iList.Add(Convert.ToDouble(ergebnis.Text));
+                }
+                print();
+            }
         }
     }
 }
